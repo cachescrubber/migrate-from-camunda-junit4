@@ -1,25 +1,21 @@
 package org.cachescrubber.demo;
 
-import org.operaton.bpm.engine.RuntimeService;
-import org.operaton.bpm.engine.runtime.ProcessInstance;
-import org.operaton.bpm.spring.boot.starter.test.helper.AbstractProcessEngineRuleTest;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import static org.operaton.bpm.engine.test.assertions.bpmn.BpmnAwareTests.assertThat;
 
+import org.junit.jupiter.api.Test;
+import org.operaton.bpm.engine.RuntimeService;
+import org.operaton.bpm.engine.runtime.ProcessInstance;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
 @SpringBootTest
-@RunWith(SpringRunner.class)
-public class WorkflowTest extends AbstractProcessEngineRuleTest {
+class WorkflowTest {
 
   @Autowired
   public RuntimeService runtimeService;
 
   @Test
-  public void shouldExecuteHappyPath() {
+  void shouldExecuteHappyPath() {
     // given
     String processDefinitionKey = "migrate-from-camunda-junit4-process";
 
